@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>YouTube API Data with JSON - Live Demo</title>
+  <meta name="author" content="Ade Molajo">
+  <link rel="shortcut icon" href="http://teamtreehouse.com/assets/favicon.ico">
+  <link rel="icon" href="http://teamtreehouse.com/assets/favicon.ico">
+  <link rel="stylesheet" href="themes/hip1.0.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <!--<link rel="stylesheet" type="text/css" media="all" href="styles.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="http://fonts.googleapis.com/css?family=Milonga">
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+	<div data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<a href="index.html" data-role="button" data-inline="true" data-corners="false">Home</a>
+				<h1>Cinegabber</h1>
+			</div>
+			<div data-role="content" data-theme="a">
+  <div id="w">
+  	
+  	<nav id="usersnav">
+      
+            
+    </nav>
+    
+    
+ <div id="ytplayer"></div>
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var video = ('input[name="vid"]').val();
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '390',
+      width: '640',
+      videoId: '$video'
+    });
+  }
+</script>
+    
+    <div id="videos">
+      <!-- vids go here -->
+    </div>
+  </div>
+  </div>
